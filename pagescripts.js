@@ -8,10 +8,6 @@ let createNewElement = function(elementToCreate, whereToCreateElement){
     
   selectElementLocation.appendChild(createThisElement);
 
-this.addClass = function(classNameEntered) {
-  createThisElement.className = classNameEntered;
-}
-
   return "Element " + elementToCreate + " created";
 }
 
