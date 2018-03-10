@@ -1,8 +1,18 @@
 let createNewElement = function(elementToCreate, whereToCreateElement){
-    var selectElementLocation = $(whereToCreateElement),
-        createThisElement = document.createElement(elementToCreate);
+  var selectElementLocation = $(whereToCreateElement),
+    createThisElement = document.createElement(elementToCreate);
 
-    selectElementLocation.appendChild(createThisElement);
+  if (!elementToCreate || !whereToCreateElement){
+    return "Please provide the element you would like to create and the element you are appending it to.\n" + "Example createNewElement('div', 'body');";
+  }
+    
+  selectElementLocation.appendChild(createThisElement);
+
+this.addClass = function(classNameEntered) {
+  createThisElement.className = classNameEntered;
 }
 
-window.createNewElement = createNewElement;
+  return "Element " + elementToCreate + " created";
+}
+
+window.createNewElement = createNewElement();
